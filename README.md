@@ -5,7 +5,7 @@ This repo contains code for the paper: [GroundHog: Dialogue Generation using Mul
 
 ### Installation
 
-Works for the python3.7+ environment.
+Works for the Python 3.7+ environment.
 
 ```bash
 pip install requirements.txt
@@ -13,7 +13,7 @@ pip install requirements.txt
 
 ### Code structure 
 1) ```GroundHog Prepare.ipynb``` contains data preprocessing and constructs trains/test splits based on the dialodues and liguistic parsing results.
-2) ```GroundHog Train Infer Cycles.ipynb``` contains train runs using various combinations of the input and output features alongwith the infrence examples. Uses ```train_eval_scripts_v2.py``` script.
+2) ```GroundHog Train Infer Cycles.ipynb``` contains train runs using various combinations of the input and output features along with the inference examples. It uses the ```train_eval_scripts_v2.py``` script.
 3) ```Base BART.ipynb``` contains the base BART training, including data preparation, train cycle (with token weights) and inference.
 4) ```Quality Estimation.ipynb``` contains evaluation scripts for the selected metrics calculation (ROUGE- and BLEU-based).
 
@@ -24,7 +24,7 @@ Code in folders:
 - ```run_summarization.py``` is used to run the training cycle for the GroundHog model.
 - ```generation_utils_custom.py``` is used during the inference stage
 
-**Note**: BartMultiEncoderModel class can be also used for other purposes.
+**Note**: BartMultiEncoderModel class can also be used for other purposes.
 
 
 ### Model Architecture
@@ -34,6 +34,12 @@ of the inputs, a 1D convolutional layer is applied to all inputs except the main
 denoted by the gear icon. In addition, intermediate tensor dimensions are indicated (batchsize is denoted as bs).
 
 ![Architecture](https://github.com/alchernyavskiy/GroundHog/blob/main/architecture.png?raw=true)
+
+
+### Dataset
+
+The dataset is collected from Reddit and can be downloaded from https://huggingface.co/datasets/alexchern5757/groundhog_reddit.
+It contains dialogues along with the corresponding grounding and linguistic annotations: discourse (dialogue acts), AMR and sentiment.
 
  
 ### Citation
